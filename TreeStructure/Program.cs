@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace TreeStructure
 {
-    public class Program
+    public static class Program
     {
         public static void Main(string[] args)
         {
