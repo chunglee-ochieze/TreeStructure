@@ -16,7 +16,7 @@ namespace TreeStructure.Tests
         {
             var number = 0;
             var letter = LetterMapper.ConvertNumberToLetters(number);
-            Assert.AreEqual("A0", letter);
+            Assert.AreEqual("", letter);
         }
 
         [TestMethod("MapOne")]
@@ -33,6 +33,14 @@ namespace TreeStructure.Tests
             var number = 26;
             var letter = LetterMapper.ConvertNumberToLetters(number);
             Assert.AreEqual("Z", letter);
+        }
+
+        [TestMethod("MapEightySeven")]
+        public void ConvertNumberToLettersTestEightySeven()
+        {
+            var number = 87;
+            var letter = LetterMapper.ConvertNumberToLetters(number);
+            Assert.AreEqual("CI", letter);
         }
     }
 }

@@ -8,11 +8,8 @@ namespace TreeStructure
 {
     public static class LetterMapper
     {
-        public static string ConvertNumberToLetters(int index)
+        public static string ConvertNumberToLetters(long index)
         {
-            if (index == 0)
-                return "A0";
-
             var letter = string.Empty;
 
             while (--index >= 0)
