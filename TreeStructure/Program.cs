@@ -29,16 +29,18 @@ namespace TreeStructure
 
                     var traverseRightFirst = depth % 2 == 0;
 
-                    var newTree = new TreeConstruct().ConstructTree(nodeValues, traverseRightFirst);
+                    var treeConstruct = new TreeConstruct();
+
+                    var newTree = treeConstruct.ConstructTree(nodeValues, traverseRightFirst);
 
                     Console.WriteLine(
                         $"Constructed Tree Structure in JSON format:\r\n{JsonConvert.SerializeObject(newTree, Formatting.Indented)}\r\n");
 
-                    var predictedZeroContainer = TreeConstruct.PredictZeroBallContainerLabel(depth);
+                    var predictedZeroContainer = treeConstruct.PredictZeroBallContainerLabel(depth);
 
                     Console.WriteLine($"Predicted container with zero ball value is {predictedZeroContainer}.\r\n");
 
-                    var searchedNode = new TreeConstruct().SearchZeroNode(newTree);
+                    var searchedNode = treeConstruct.SearchZeroNode(newTree);
 
                     Console.WriteLine($"Verified container with zero ball value is labeled {searchedNode.Container}.");
                 }

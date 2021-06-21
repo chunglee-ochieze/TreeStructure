@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace TreeStructure
 {
-    public class TreeConstruct
+    public class TreeConstruct : ITreeConstruct
     {
         public class TreeNode
         {
@@ -29,7 +29,7 @@ namespace TreeStructure
             return foundOnLeft ?? SearchZeroNode(node.Right, value);
         }
 
-        public static string PredictZeroBallContainerLabel(uint depth)
+        public string PredictZeroBallContainerLabel(uint depth)
         {
             var containerIndex = ZeroContainerIndex(depth);
 

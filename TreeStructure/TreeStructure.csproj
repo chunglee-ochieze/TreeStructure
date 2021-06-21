@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="ITreeConstruct.cs" />
     <Compile Include="LetterMapper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="TreeConstruct.cs" />

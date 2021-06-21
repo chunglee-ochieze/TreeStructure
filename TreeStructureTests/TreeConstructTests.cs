@@ -10,6 +10,8 @@ namespace TreeStructure.Tests
     [TestClass]
     public class TreeConstructTests
     {
+        private readonly TreeConstruct _treeConstruct = new();
+
         [TestMethod("TreeConstruct")]
         public void ConstructTreeTest()
         {
@@ -21,7 +23,7 @@ namespace TreeStructure.Tests
 
             var traverseRightFirst = depth % 2 == 0;
 
-            var newTree = new TreeConstruct().ConstructTree(nodeValues, traverseRightFirst);
+            var newTree = _treeConstruct.ConstructTree(nodeValues, traverseRightFirst);
             Assert.AreEqual(3, newTree.Value);
             Assert.AreEqual("A", newTree.Container);
             Assert.AreEqual(0, newTree.Left.Right.Value);
@@ -39,9 +41,9 @@ namespace TreeStructure.Tests
 
             var normalTraverse = depth % 2 == 0;
 
-            var newTree = new TreeConstruct().ConstructTree(familyList, normalTraverse);
+            var newTree = _treeConstruct.ConstructTree(familyList, normalTraverse);
 
-            var searchedNode = new TreeConstruct().SearchZeroNode(newTree);
+            var searchedNode = _treeConstruct.SearchZeroNode(newTree);
 
             Assert.AreEqual(0, searchedNode.Value);
         }
@@ -57,9 +59,9 @@ namespace TreeStructure.Tests
 
             var normalTraverse = depth % 2 == 0;
 
-            var newTree = new TreeConstruct().ConstructTree(familyList, normalTraverse);
+            var newTree = _treeConstruct.ConstructTree(familyList, normalTraverse);
 
-            var searchedNode = new TreeConstruct().SearchZeroNode(newTree, 2);
+            var searchedNode = _treeConstruct.SearchZeroNode(newTree, 2);
 
             Assert.AreEqual(2, searchedNode.Value);
         }
@@ -69,7 +71,7 @@ namespace TreeStructure.Tests
         {
             var depth = 2U;
 
-            var containerLabel = TreeConstruct.PredictZeroBallContainerLabel(depth);
+            var containerLabel = _treeConstruct.PredictZeroBallContainerLabel(depth);
 
             Assert.AreEqual("D", containerLabel);
         }
@@ -79,7 +81,7 @@ namespace TreeStructure.Tests
         {
             var depth = 0U;
 
-            var containerLabel = TreeConstruct.PredictZeroBallContainerLabel(depth);
+            var containerLabel = _treeConstruct.PredictZeroBallContainerLabel(depth);
 
             Assert.AreEqual("A", containerLabel);
         }
@@ -89,7 +91,7 @@ namespace TreeStructure.Tests
         {
             var depth = 3U;
 
-            var containerLabel = TreeConstruct.PredictZeroBallContainerLabel(depth);
+            var containerLabel = _treeConstruct.PredictZeroBallContainerLabel(depth);
 
             Assert.AreEqual("L", containerLabel);
         }
@@ -99,7 +101,7 @@ namespace TreeStructure.Tests
         {
             var depth = 7U;
 
-            var containerLabel = TreeConstruct.PredictZeroBallContainerLabel(depth);
+            var containerLabel = _treeConstruct.PredictZeroBallContainerLabel(depth);
 
             Assert.AreEqual("FR", containerLabel);
         }
@@ -109,7 +111,7 @@ namespace TreeStructure.Tests
         {
             var depth = 60U;
 
-            var containerLabel = TreeConstruct.PredictZeroBallContainerLabel(depth);
+            var containerLabel = _treeConstruct.PredictZeroBallContainerLabel(depth);
 
             Assert.AreEqual("HAJRNAPCZZVHI", containerLabel);
         }
